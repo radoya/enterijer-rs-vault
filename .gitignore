@@ -1,0 +1,8 @@
+.obsidian/workspace*
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.trash/
+.DS_Store
+Thumbs.db
+01 - SISTEM/SECRETS/*
+!01 - SISTEM/SECRETS/.gitkeep

@@ -1,0 +1,12 @@
+requests
+python-dotenv
+openai
+anthropic
+cloudflare
+Pillow
+pymupdf
+yt-dlp
+beautifulsoup4
+selenium
+markdown
+python-frontmatter

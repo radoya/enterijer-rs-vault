@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  vault:
+    build: .
+    container_name: enterijer-vault
+    volumes:
+      - ./:/app/vault
+      - ~/.ssh:/root/.ssh:ro
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
+    working_dir: /app/vault
+    command: tail -f /dev/null
+  hugo:
+    image: klakegg/hugo:0.127.0-ext-ubuntu
+    container_name: enterijer-hugo
+    ports:
+      - "1313:1313"
+    volumes:
+      - ./hugo-site:/src
+    working_dir: /src
+    command: server -D --bind 0.0.0.0 --port 1313
